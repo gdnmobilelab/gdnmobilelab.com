@@ -1,0 +1,8 @@
+{
+  "name": "landing-page",
+  "version": "1.0.0",
+  "description": "Landing page for Mobile Innovation Lab",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}

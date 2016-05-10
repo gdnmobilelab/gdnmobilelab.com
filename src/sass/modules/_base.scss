@@ -1,0 +1,7 @@
+html {
+    background-color: $neutral-6;
+}
+
+.gs-container {
+    @include gs-container();
+}

@@ -1,10 +1,16 @@
 var gulp = require('gulp'),
     plugins = require('gulp-load-plugins')();
 
-gulp.task('copy-html', function() {
+gulp.task('build-html', function() {
     gulp.src('src/**/*.html')
         .pipe(gulp.dest('./dist'));
 });
+
+gulp.task('build-css', function() {
+    gulp.src('src/sass/style.scss')
+        .pipe(plugins.sass.sync().on('error', plugins.sass.logError))
+        .pipe(gulp.dest('./dist'))
+})
 
 gulp.task('serve', function() {
     gulp.src('dist')
@@ -15,8 +21,9 @@ gulp.task('serve', function() {
 });
 
 gulp.task('watch', function() {
-    gulp.watch('src/**/*.html', ['copy-html']);
+    gulp.watch('src/**/*.html', ['build-html']);
+    gulp.watch('src/sass/**/*.scss', ['build-css']);
 })
 
-gulp.task('build', ['copy-html']);
+gulp.task('build', ['build-html', 'build-css']);
 gulp.task('dev', ['build', 'serve', 'watch']);

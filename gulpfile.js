@@ -2,7 +2,10 @@ var gulp = require('gulp'),
     plugins = require('gulp-load-plugins')();
 
 gulp.task('build-html', function() {
-    gulp.src('src/**/*.html')
+    gulp.src('src/*.mustache')
+        .pipe(plugins.mustache('./src/data.json', {
+            extension: '.html'
+        }))
         .pipe(gulp.dest('./dist'))
         .pipe(plugins.connect.reload());
 });
@@ -30,7 +33,7 @@ gulp.task('serve', function() {
 });
 
 gulp.task('watch', function() {
-    gulp.watch('src/**/*.html', ['build-html']);
+    gulp.watch(['src/**/*.mustache', 'src/**/*.json'], ['build-html']);
     gulp.watch('src/assets/**/*', ['build-assets']);
     gulp.watch('src/sass/**/*.scss', ['build-css']);
 });

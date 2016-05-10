@@ -1,13 +1,8 @@
 html {
+    font-family: 'GuardianSansWeb', sans-serif;
     background-color: $neutral-6;
 }
 
 .gs-container {
     @include gs-container();
-}
-
-h1 {
-    font-family: 'GuardianSansWeb', Helvetica;
-    font-weight: 400;
-    font-size: 32px;
 }

@@ -10,7 +10,7 @@ gulp.task('build-css', function() {
     gulp.src('src/sass/style.scss')
         .pipe(plugins.sass.sync().on('error', plugins.sass.logError))
         .pipe(gulp.dest('./dist'))
-})
+});
 
 gulp.task('serve', function() {
     gulp.src('dist')
@@ -23,7 +23,7 @@ gulp.task('serve', function() {
 gulp.task('watch', function() {
     gulp.watch('src/**/*.html', ['build-html']);
     gulp.watch('src/sass/**/*.scss', ['build-css']);
-})
+});
 
 gulp.task('build', ['build-html', 'build-css']);
 gulp.task('dev', ['build', 'serve', 'watch']);

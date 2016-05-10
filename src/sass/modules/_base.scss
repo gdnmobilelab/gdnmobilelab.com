@@ -5,3 +5,9 @@ html {
 .gs-container {
     @include gs-container();
 }
+
+h1 {
+    font-family: 'GuardianSansWeb', Helvetica;
+    font-weight: 400;
+    font-size: 32px;
+}

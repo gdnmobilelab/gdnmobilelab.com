@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "Landing page for Mobile Innovation Lab",
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-load-plugins": "^1.2.2",
+    "gulp-webserver": "^0.9.1"
   }
 }

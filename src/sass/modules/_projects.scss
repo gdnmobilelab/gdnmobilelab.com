@@ -1,0 +1,42 @@
+.projects {
+    position: relative;
+    height: 400px;
+}
+
+.projects__logo {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    fill: $guardian-brand;
+}
+
+.projects__atom {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    padding: 4px;
+    background-color: $guardian-brand;
+}
+
+.projects__atom-title {
+    position: absolute;
+    left: 40px;
+    width: 100px;
+    display: none;
+}
+
+.projects__atom-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}

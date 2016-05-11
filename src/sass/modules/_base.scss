@@ -1,8 +1,11 @@
 html {
+    font-size: 20px;
     font-family: 'GuardianSansWeb', sans-serif;
+    color: $neutral-1;
     background-color: $neutral-6;
 }
 
 .gs-container {
     @include gs-container();
+    padding: 0 $gs-gutter;
 }

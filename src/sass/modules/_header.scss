@@ -1,0 +1,10 @@
+.header {
+    max-width: gs-span(6);
+    margin: 20px 0;
+    line-height: 24px;
+}
+
+.header__description {
+    font-weight: 300;
+    color: $neutral-2;
+}

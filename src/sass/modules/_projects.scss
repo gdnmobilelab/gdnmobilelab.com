@@ -48,7 +48,15 @@
     box-sizing: border-box;
     padding: 4px;
     background-color: $guardian-brand;
-    will-change: transform
+    will-change: transform;
+
+    &:hover {
+        animation-play-state: paused !important;
+
+        ~ .projects__atom-trail .projects__atom-mask {
+            animation-play-state: paused !important;
+        }
+    }
 }
 
 .projects__atom-title {

@@ -4,21 +4,25 @@
     "projects" : [{
         "index" : 1,
         "title" : "Notifications",
+        "url" : "https://www.gdnmobilelab.com/apps/io/",
         "icon" : "notification",
         "color" : "#197dab"
     }, {
         "index" : 2,
         "title" : "Live news",
+        "url" : "https://www.gdnmobilelab.com/apps/io/",
         "icon" : "clock",
         "color" : "#4bc6df"
     }, {
         "index" : 3,
         "title" : "Another Project",
+        "url" : "https://www.gdnmobilelab.com/apps/io/",
         "icon" : "clock",
         "color" : "#69d1ca"
     }, {
         "index" : 4,
         "title" : "Another Project",
+        "url" : "https://www.gdnmobilelab.com/apps/io/",
         "icon" : "clock",
         "color" : "#e6711b"
     }],

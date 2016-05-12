@@ -1,7 +1,6 @@
 .projects {
     position: relative;
-    height: 550px;
-    overflow: hidden;
+    margin: auto;
 }
 
 .projects__logo {
@@ -112,8 +111,14 @@ $stroke-dasharray: 6.2, 4, 3.4, 2.6, 1;
         }
     }
 
+    .projects--#{$i} {
+        height: $radius + $gs-baseline * 4;
+        width: $radius;
+    }
+
     .projects__atom--#{$i} {
         width: $radius;
+        height: $radius;
 
         .projects__atom-mask {
             animation: maskOrbit $speed linear infinite;

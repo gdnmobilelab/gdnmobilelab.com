@@ -87,6 +87,7 @@ $stroke-dasharray: 6.2, 4, 3.4, 2.6, 1;
 
 @for $i from 1 through 5 {
     $radius: 80px + ($i * 100px);
+    $speed: 6s + (2s * $i);
 
     @keyframes orbit-#{$i} {
         from {
@@ -101,11 +102,11 @@ $stroke-dasharray: 6.2, 4, 3.4, 2.6, 1;
         width: $radius;
 
         .projects__atom-mask {
-            animation: maskOrbit 3s + (2s * $i) linear infinite;
+            animation: maskOrbit $speed linear infinite;
         }
 
         .projects__atom-button {
-            animation: orbit-#{$i} 3s + (2s * $i) linear infinite;
+            animation: orbit-#{$i} $speed linear infinite;
         }
 
         .projects__atom-mask,

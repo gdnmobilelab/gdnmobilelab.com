@@ -7,6 +7,21 @@
     border-radius: 50%;
     box-sizing: border-box;
     padding: 4px;
+
+    &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        z-index: 1;
+        content: '';
+    }
+
+    &:hover:before {
+        background-color: rgba(0, 0, 0, .2);
+    }
 }
 
 .button__icon {
@@ -15,5 +30,6 @@
     left: 0;
     bottom: 0;
     right: 0;
+    z-index: 2;
     margin: auto;
 }

@@ -1,6 +1,7 @@
 .projects {
     position: relative;
-    height: 400px;
+    height: 550px;
+    overflow: hidden;
 }
 
 .projects__logo {
@@ -16,19 +17,41 @@
 }
 
 .projects__atom {
-    position: relative;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+@keyframes orbit {
+    from {
+        transform: rotate(0deg) translateX(150px) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translateX(150px) rotate(-360deg);
+    }
+}
+
+.projects__atom-button {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
     width: 32px;
     height: 32px;
     border-radius: 50%;
     box-sizing: border-box;
     padding: 4px;
     background-color: $guardian-brand;
+    will-change: transform
 }
 
 .projects__atom-title {
-    position: absolute;
-    left: 40px;
-    width: 100px;
     display: none;
 }
 
@@ -39,4 +62,60 @@
     bottom: 0;
     right: 0;
     margin: auto;
+}
+
+.projects__atom-trail {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes maskOrbit {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+.projects__atom-mask {
+    transform-origin: top center;
+}
+
+$stroke-width: 2, 1.4, 1, .8, .6;
+$stroke-dasharray: 6.2, 4, 3.4, 2.6, 1;
+
+@for $i from 1 through 5 {
+    $radius: 80px + ($i * 100px);
+
+    @keyframes orbit-#{$i} {
+        from {
+            transform: rotate(0deg) translateX($radius / 2 - (6px * $i)) rotate(0deg);
+        }
+        to {
+            transform: rotate(-360deg) translateX($radius / 2 - (6px * $i)) rotate(360deg);
+        }
+    }
+
+    .projects__atom--#{$i} {
+        width: $radius;
+
+        .projects__atom-mask {
+            animation: maskOrbit 3s + (2s * $i) linear infinite;
+        }
+
+        .projects__atom-button {
+            animation: orbit-#{$i} 3s + (2s * $i) linear infinite;
+        }
+
+        .projects__atom-mask,
+        .projects__atom-button {
+            animation-delay: $i * -2s;
+        }
+
+        .projects__atom-trail circle {
+            stroke-width: nth($stroke-width, $i);
+            stroke-dasharray: .1, nth($stroke-dasharray, $i);
+        }
+    }
 }

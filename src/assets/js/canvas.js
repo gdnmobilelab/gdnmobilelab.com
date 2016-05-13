@@ -49,16 +49,18 @@ function newStar(i) {
     var star = new Object();
     star.x = generateX();
     star.y = generateY();
-    star.speed = 1 + Math.random() * 3;
+    star.speed = .2 + Math.random();
     star.angle = Math.random() * 360;
     stars[i] = star;
 }
 
 function initStars() {
-    numOfStars = Math.floor(canvas.width / 60);
+    numOfStars = Math.floor(canvas.width / 30);
 
     for (var i = 0; i < numOfStars; i++) {
         newStar(i);
+        stars[i].x = Math.random() * canvas.height;
+        stars[i].y = Math.random() * canvas.width;
     }
 }
 

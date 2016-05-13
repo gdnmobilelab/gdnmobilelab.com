@@ -41,6 +41,8 @@
     left: 0;
     z-index: 2;
     background-color: $guardian-brand;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
     will-change: transform;
 
     &:hover {
@@ -93,6 +95,9 @@
 
 .projects__atom-mask {
     transform-origin: top center;
+    animation-name: maskOrbit;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 
 $stroke-width: 2, 1.4, 1, .8, .6;
@@ -120,12 +125,17 @@ $stroke-dasharray: 6.2, 4, 3.4, 2.6, 1;
         width: $radius;
         height: $radius;
 
-        .projects__atom-mask {
-            animation: maskOrbit $speed linear infinite;
+        .projects__atom-mask,
+        .projects__atom-button {
+            animation-duration: $speed * 2;
+
+            @include mq(desktop) {
+                animation-duration: $speed;
+            }
         }
 
         .projects__atom-button {
-            animation: orbit-#{$i} $speed linear infinite;
+            animation-name: orbit-#{$i};
         }
 
         .projects__atom-mask,

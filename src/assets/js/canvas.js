@@ -25,18 +25,17 @@ function  drawScreen () {
 }
 
 function newStar(i) {
-    stars[i].x = Math.random() * canvas.width - canvas.width;
-    stars[i].y = Math.random() * canvas.height - canvas.height;
-}
-
-function initStars() {
-    for (var i = 0; i < numOfStars; i++) {
         var star = new Object();
         star.x = Math.random() * canvas.width - canvas.width;
         star.y = Math.random() * canvas.height - canvas.height;
         star.speed = 1 + Math.random() * 3;
         star.angle = Math.random() * 360;
-        stars.push(star);
+        stars[i] = star;
+}
+
+function initStars() {
+    for (var i = 0; i < numOfStars; i++) {
+        newStar(i);
     }
 }
 

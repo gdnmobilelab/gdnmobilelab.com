@@ -2,14 +2,14 @@
 var stars = [],
     numOfStars = 30,
     canvas,
-    loop;
+    loop,
+    image = new Image();
 
 function  drawScreen () {
     context.clearRect(0, 0, canvas.width, canvas.height);
+
     for (var i = 0; i < numOfStars; i++) {
         var star = stars[i];
-        var image = new Image();
-        image.src = "assets/images/star.png";
         context.save();
         context.translate(canvas.width / 2, canvas.height / 2);
         context.rotate(star.angle * Math.PI/180);
@@ -80,6 +80,7 @@ function init() {
     canvas.width  = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
     context = canvas.getContext("2d");
+    image.src = "assets/images/star.png";
 
     initStars();
     setLoop();

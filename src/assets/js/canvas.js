@@ -18,19 +18,29 @@ function  drawScreen () {
         context.drawImage(image, star.x, star.y);
         context.restore();
 
-        if (star.x > canvas.width - image.width || star.y > canvas.height - image.height) {
+        if (star.x > canvas.width + image.width || star.y > canvas.height + image.height) {
             newStar(i);
         }
     }
 }
 
+function generateX() {
+    var x = Math.random() * canvas.width;
+    if (x > canvas.width / 2) {
+        x += canvas.width;
+    } else if (x < canvas.width / 2) {
+        x -= canvas.width;
+    }
+    return x;
+}
+
 function newStar(i) {
-        var star = new Object();
-        star.x = Math.random() * canvas.width - canvas.width;
-        star.y = Math.random() * canvas.height - canvas.height;
-        star.speed = 1 + Math.random() * 3;
-        star.angle = Math.random() * 360;
-        stars[i] = star;
+    var star = new Object();
+    star.x = generateX();
+    star.y =  Math.random() * canvas.height;
+    star.speed = 1 + Math.random() * 3;
+    star.angle = Math.random() * 360;
+    stars[i] = star;
 }
 
 function initStars() {
@@ -39,7 +49,11 @@ function initStars() {
     }
 }
 
-// Init the canvas
+function setLoop() {
+    window.setTimeout(setLoop, 20);
+    drawScreen();
+}
+
 function init() {
     canvas = document.getElementsByClassName("canvas")[0];
     canvas.style.width = '100%';
@@ -50,11 +64,6 @@ function init() {
 
     initStars();
     setLoop();
-}
-
-function setLoop() {
-    window.setTimeout(setLoop, 20);
-    drawScreen();
 }
 
 init();

@@ -55,7 +55,7 @@ function newStar(i) {
 }
 
 function initStars() {
-    numOfStars = Math.floor(canvas.width / 30);
+    numOfStars = Math.floor(canvas.width / 45);
 
     for (var i = 0; i < numOfStars; i++) {
         newStar(i);

@@ -127,7 +127,7 @@ $stroke-dasharray: 6.2, 4, 3.4, 2.6, 1;
 
         .projects__atom-mask,
         .projects__atom-button {
-            animation-duration: $speed * 2;
+            animation-duration: $speed * 3;
 
             @include mq(desktop) {
                 animation-duration: $speed;
@@ -140,7 +140,7 @@ $stroke-dasharray: 6.2, 4, 3.4, 2.6, 1;
 
         .projects__atom-mask,
         .projects__atom-button {
-            animation-delay: $i * -2s;
+            animation-delay: $i * -10s;
         }
 
         .projects__atom-trail circle {

@@ -34,16 +34,28 @@ function generateX() {
     return x;
 }
 
+function generateY() {
+    var y = Math.random() * canvas.height;
+    if (y > canvas.height / 2) {
+        y -= canvas.height;
+    } else if (y < canvas.height / 2) {
+        y += canvas.height;
+    }
+    return y;
+}
+
 function newStar(i) {
     var star = new Object();
     star.x = generateX();
-    star.y =  Math.random() * canvas.height;
+    star.y = generateY();
     star.speed = 1 + Math.random() * 3;
     star.angle = Math.random() * 360;
     stars[i] = star;
 }
 
 function initStars() {
+    numOfStars = Math.floor(canvas.width / 60);
+
     for (var i = 0; i < numOfStars; i++) {
         newStar(i);
     }

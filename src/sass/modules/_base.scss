@@ -2,12 +2,18 @@ html {
     font-size: 20px;
     font-family: 'GuardianSansWeb', sans-serif;
     color: $neutral-1;
-    // background-image: url('assets/images/bg.png');
-    // background-position: center center;
     background-color: $neutral-6;
+}
+
+html,
+body,
+.gs-container {
+    height: 100%;
 }
 
 .gs-container {
     @include gs-container();
     padding: 0 $gs-gutter;
+    display: flex;
+    flex-direction: column;
 }

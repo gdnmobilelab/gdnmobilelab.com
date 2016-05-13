@@ -1,7 +1,8 @@
 // Set vars
 var stars = [],
     numOfStars = 30,
-    canvas;
+    canvas,
+    loop;
 
 function  drawScreen () {
     context.clearRect(0, 0, canvas.width, canvas.height);
@@ -62,8 +63,12 @@ function initStars() {
 }
 
 function setLoop() {
-    window.setTimeout(setLoop, 20);
+    loop = window.setTimeout(setLoop, 20);
     drawScreen();
+}
+
+function clearLoop() {
+    window.clearTimeout(loop);
 }
 
 function init() {
@@ -79,3 +84,8 @@ function init() {
 }
 
 init();
+
+window.addEventListener('resize', function(){
+    clearLoop();
+    init();
+}, true);

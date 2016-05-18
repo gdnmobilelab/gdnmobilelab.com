@@ -1,0 +1,20 @@
+.tinyletterhider {
+    width:1px;
+    height:1px;
+    overflow:hidden;
+    position:absolute;
+    left:-99999em;
+    visibility:hidden;
+    top:0;
+}
+
+.tinyletter-confirmation {
+    display:none;
+    float: left;
+    margin:20px 0;
+    background: green;
+    padding: 20px;
+    color: white;
+    text-shadow: 1px 0 0 black;
+    border-radius: 2px;
+}

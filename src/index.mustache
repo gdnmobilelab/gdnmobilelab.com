@@ -45,6 +45,15 @@
                 </a>
                 {{/social}}
             </div>
+            <div class="sign-up">
+                <form action="https://tinyletter.com/GuardianMobileLab" method="post" target="tinyletterhider" class="tinyletter-form">
+                    <label>Signup for Our Newsletter</label>
+                    <input type="email" placeholder="Your Email Address" name="email" />
+                    <span class="tinyletter-confirmation">You're almost done! Check your email to confirm subscription.</span>
+                    <input type="hidden" value="1" name="embed"/><button type="submit">Subscribe</button>
+                </form>
+                <iframe class="tinyletterhider" name="tinyletterhider"></iframe>
+            </div>
         </div>
     </div>
     <canvas class="canvas"></canvas>

@@ -45,6 +45,13 @@
                 </a>
                 {{/social}}
             </div>
+
+            <form class="sign-up" action="https://tinyletter.com/GuardianMobileLab" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/GuardianMobileLab', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
+                <label for="tlemail" class="sign-up__label">{{email-trail}}</label>
+                <input type="text" value="Your email address" name="email" id="tlemail" class="sign-up__input" onfocus="if(this.value == 'Your email address') { this.value = ''; this.classList.add('sign-up__input--focused'); }" onblur="if(this.value == '') { this.value = 'Your email address'; this.classList.remove('sign-up__input--focused')}" />
+                <input type="hidden" value="1" name="embed"/>
+                <input type="submit" value="Subscribe" class="sign-up__button" />
+            </form>
         </div>
     </div>
     <canvas class="canvas"></canvas>

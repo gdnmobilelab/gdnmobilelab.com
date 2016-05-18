@@ -1,0 +1,56 @@
+.sign-up {
+    font-size: 14px;
+
+    @include mq($until: bitWhereFormLooksWeird) {
+        margin: 0 -20px ($gs-baseline * -2);
+        padding: 0 20px $gs-baseline * 2;
+        border-top: 1px solid $neutral-5;
+        background-color: #ffffff;
+        margin-top: $gs-baseline;
+    }
+}
+
+.sign-up__label {
+    color: $neutral-2;
+    margin-right: 8px;
+
+    @include mq($until: bitWhereFormLooksWeird) {
+        display: block;
+        font-size: 20px;
+        margin: $gs-baseline 0 $gs-baseline;
+    }
+}
+
+.sign-up__input {
+    border: 1px solid $neutral-5;
+    border-radius: 20px 0 0 20px;
+    padding: 8px 14px;
+    max-width: gs-span(3);
+    font-family: inherit;
+    font-size: inherit;
+    color: $neutral-3;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.sign-up__input--focused {
+    color: $neutral-1;
+}
+
+.sign-up__button {
+    margin-left: -4px;
+    border-radius: 0 20px 20px 0;
+    border: none;
+    padding: 9px 14px; // 1px to compensate for .sign-up__input border
+    background-color: $guardian-brand;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+
+    &:hover {
+        background-color: darken($guardian-brand, 5%);
+    }
+}

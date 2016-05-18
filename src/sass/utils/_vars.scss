@@ -2,6 +2,7 @@
 $mq-breakpoints: (
     mobile:          gs-span(4)  + $gs-gutter,   // 320px
     mobileLandscape: gs-span(6)  + $gs-gutter,   // 480px
+    bitWhereFormLooksWeird: gs-span(7),          // 540px
     phablet:         gs-span(8)  + $gs-gutter*2, // 660px
     tablet:          gs-span(9)  + $gs-gutter*2, // 740px
     desktop:         gs-span(12) + $gs-gutter*2, // 980px

@@ -1,5 +1,7 @@
 var gulp = require('gulp'),
-    plugins = require('gulp-load-plugins')();
+    plugins = require('gulp-load-plugins')(),
+    fs = require('fs'),
+    aws = JSON.parse(fs.readFileSync('aws.json'));
 
 gulp.task('build-html', function() {
     gulp.src('src/*.mustache')
@@ -38,5 +40,26 @@ gulp.task('watch', function() {
     gulp.watch('src/sass/**/*.scss', ['build-css']);
 });
 
+gulp.task('publish', function() {
+    var publisher = plugins.awspublish.create({
+        params: {
+            Bucket: "www.stg.gdnmobilelab.com",
+        },
+        accessKeyId: aws.key,
+        secretAccessKey: aws.secret
+    });
+
+    gulp.src('./dist/**/*', {base: 'dist'})
+        .pipe(plugins.rename(function(path) {
+            path.dirname = 'landing/' + path.dirname;
+        }))
+        .pipe(publisher.publish({
+            'Cache-Control': 'public'
+        }))
+        .pipe(publisher.cache())
+        .pipe(plugins.awspublish.reporter());
+});
+
 gulp.task('build', ['build-html', 'build-assets', 'build-css']);
 gulp.task('dev', ['build', 'serve', 'watch']);
+gulp.task('deploy', ['build', 'publish']);

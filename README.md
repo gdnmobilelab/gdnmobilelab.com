@@ -25,6 +25,11 @@ Once running, you are now free to make changes to files inside the `src` folder.
 
 Changes to any of these files (or adding any assets to the `assets` folder) will be watched and the site will rebuild with your changes. The resulting site will be placed inside the `dist` folder.
 
-## Todo
+## Deployment
+Once you're ready to deploy, you'll need to setup your s3 credentials. Do this by duplicating `aws.example.json` and renaming the new file `aws.json`. Then you'll need to replace the asterisked fields with your s3 keys.
 
-* Add `gulp deploy` task to build the site and upload the `dist` folder to our `s3 bucket`
+Once you've done so simply deploy the website using the following command.
+
+```
+gulp deploy
+```

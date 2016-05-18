@@ -4,3 +4,4 @@ dist
 .DS_Store
 
 aws.json
+.awspublish-www.stg.gdnmobilelab.com

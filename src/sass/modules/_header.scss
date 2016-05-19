@@ -1,7 +1,7 @@
 .header {
     max-width: gs-span(6);
     margin: $gs-baseline 0 -40px;
-    line-height: 22px;
+    line-height: 20px;
 
     @include mq(mobileLandscape) {
         margin-top: $gs-baseline * 2;

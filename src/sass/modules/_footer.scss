@@ -1,5 +1,9 @@
 .footer {
-    margin: $gs-baseline * 2 0;
+    margin: $gs-baseline 0;
+
+    @include mq(mobileLandscape) {
+        margin: $gs-baseline * 2 0;
+    }
 }
 
 .social {

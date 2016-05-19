@@ -7,12 +7,6 @@
         "url" : "https://www.gdnmobilelab.com/apps/io/",
         "icon" : "notification",
         "color" : "#197dab"
-    }, {
-        "index" : 2,
-        "title" : "Coming Soon",
-        "url" : "https://www.gdnmobilelab.com/apps/io/",
-        "icon" : "clock",
-        "color" : "#999"
     }],
     "social" : [{
         "url" : "https://twitter.com/GdnMobileLab",

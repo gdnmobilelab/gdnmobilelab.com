@@ -19,6 +19,10 @@
         font-size: 20px;
         margin: $gs-baseline 0 $gs-baseline;
     }
+
+    @include mq($until: mobileLandscape) {
+        font-size: 16px;
+    }
 }
 
 .sign-up__input {

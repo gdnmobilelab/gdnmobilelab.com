@@ -4,7 +4,7 @@ var gulp = require('gulp'),
     isProduction = (process.argv.indexOf("--production") > -1) ? true : false;
 
 gulp.task('build-html', function() {
-    gulp.src('src/*.mustache')
+    gulp.src(['src/**/*.mustache', '!src/html/*.mustache'])
         .pipe(plugins.mustache('./src/data.json', {
             extension: '.html'
         }))

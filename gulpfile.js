@@ -1,7 +1,6 @@
 var gulp = require('gulp'),
     plugins = require('gulp-load-plugins')(),
-    fs = require('fs'),
-    aws = JSON.parse(fs.readFileSync('aws.json'));
+    fs = require('fs');
 
 gulp.task('build-html', function() {
     gulp.src('src/*.mustache')
@@ -41,6 +40,7 @@ gulp.task('watch', function() {
 });
 
 gulp.task('publish', function() {
+    var aws = JSON.parse(fs.readFileSync('aws.json'));
     var publisher = plugins.awspublish.create({
         params: {
             Bucket: "www.stg.gdnmobilelab.com",

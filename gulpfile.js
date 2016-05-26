@@ -1,13 +1,16 @@
 var gulp = require('gulp'),
     plugins = require('gulp-load-plugins')(),
+    fs = require('fs'),
     aws = require('aws-sdk'),
     isProduction = (process.argv.indexOf("--production") > -1) ? true : false;
 
 gulp.task('build-html', function() {
-    gulp.src(['src/**/*.mustache', '!src/html/*.mustache'])
-        .pipe(plugins.mustache('./src/data.json', {
-            extension: '.html'
-        }))
+    var data = JSON.parse(fs.readFileSync('./src/data.json'));
+
+    gulp.src(['src/**/*.html'])
+        .pipe(plugins.hb()
+            .data(JSON.parse(fs.readFileSync('./src/data.json')))
+            .partials('src/html/*.hbs'))
         .pipe(gulp.dest('./dist'))
         .pipe(plugins.connect.reload());
 });
@@ -35,7 +38,7 @@ gulp.task('serve', function() {
 });
 
 gulp.task('watch', function() {
-    gulp.watch(['src/**/*.mustache', 'src/**/*.json'], ['build-html']);
+    gulp.watch(['src/**/*.html', 'src/**/*.json'], ['build-html']);
     gulp.watch('src/assets/**/*', ['build-assets']);
     gulp.watch('src/sass/**/*.scss', ['build-css']);
 });

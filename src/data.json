@@ -7,16 +7,6 @@
             "url" : "https://www.gdnmobilelab.com/apps/io/",
             "icon" : "notification",
             "color" : "#197dab"
-        },
-        "something else": {
-            "title" : "testste",
-            "url" : "hey",
-            "color" : "red"
-        },
-        "somethingasdf else": {
-            "title" : "tesasdftste",
-            "url" : "hey",
-            "color" : "red"
         }
     }],
     "social" : [{

@@ -80,7 +80,7 @@ function init() {
     canvas.width  = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
     context = canvas.getContext("2d");
-    image.src = "assets/images/star.png";
+    image.src = "/assets/images/star.png";
 
     initStars();
     setLoop();

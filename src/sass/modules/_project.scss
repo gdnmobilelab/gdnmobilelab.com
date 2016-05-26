@@ -40,6 +40,10 @@
     font-size: 14px;
     color: $neutral-2;
     text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 .project__title {
@@ -69,16 +73,27 @@
             background-color: darken($guardian-brand, 10%);
         }
 
-        &.twitter {
+        &.link--twitter {
             background-color: #00aced;
+
+            &:hover {
+                background-color: darken(#00aced, 10%);
+            }
         }
 
-        &.email {
+        &.link--email {
             background-color: $neutral-3;
 
             &:hover {
                 background-color: darken($neutral-3, 10%);
             }
+        }
+
+        &.link--big {
+            display: inline-block;
+            margin-top: 2px;
+            padding: 9px 14px 7px;
+            border-radius: 2em
         }
     }
 }
@@ -94,5 +109,9 @@
     a {
         color: $guardian-brand;
         text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }

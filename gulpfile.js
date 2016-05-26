@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
     plugins = require('gulp-load-plugins')(),
-    fs = require('fs');
+    aws = require('aws-sdk'),
+    isProduction = (process.argv.indexOf("--production") > -1) ? true : false;
 
 gulp.task('build-html', function() {
     gulp.src('src/*.mustache')
@@ -40,13 +41,11 @@ gulp.task('watch', function() {
 });
 
 gulp.task('publish', function() {
-    var aws = JSON.parse(fs.readFileSync('aws.json'));
     var publisher = plugins.awspublish.create({
         params: {
             Bucket: "www.stg.gdnmobilelab.com",
         },
-        accessKeyId: aws.key,
-        secretAccessKey: aws.secret
+        credentials: new aws.SharedIniFileCredentials({profile: 's3_staging'})
     });
 
     gulp.src('./dist/**/*', {base: 'dist'})

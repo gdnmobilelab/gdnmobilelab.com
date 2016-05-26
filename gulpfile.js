@@ -1,7 +1,7 @@
 var gulp = require('gulp'),
     plugins = require('gulp-load-plugins')(),
-    fs = require('fs'),
-    aws = JSON.parse(fs.readFileSync('aws.json'));
+    aws = require('aws-sdk'),
+    isProduction = (process.argv.indexOf("--production") > -1) ? true : false;
 
 gulp.task('build-html', function() {
     gulp.src('src/*.mustache')
@@ -43,16 +43,14 @@ gulp.task('watch', function() {
 gulp.task('publish', function() {
     var publisher = plugins.awspublish.create({
         params: {
-            Bucket: "www.stg.gdnmobilelab.com",
+            Bucket: (isProduction) ? "www.gdnmobilelab.com" : "www.stg.gdnmobilelab.com"
         },
-        accessKeyId: aws.key,
-        secretAccessKey: aws.secret
+        credentials: new aws.SharedIniFileCredentials({
+            profile: (isProduction) ? 's3_production' : "s3_staging"
+        })
     });
 
     gulp.src('./dist/**/*', {base: 'dist'})
-        .pipe(plugins.rename(function(path) {
-            path.dirname = 'landing/' + path.dirname;
-        }))
         .pipe(publisher.publish({
             'Cache-Control': 'public'
         }))

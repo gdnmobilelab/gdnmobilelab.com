@@ -43,15 +43,14 @@ gulp.task('watch', function() {
 gulp.task('publish', function() {
     var publisher = plugins.awspublish.create({
         params: {
-            Bucket: "www.stg.gdnmobilelab.com",
+            Bucket: (isProduction) ? "www.gdnmobilelab.com" : "www.stg.gdnmobilelab.com"
         },
-        credentials: new aws.SharedIniFileCredentials({profile: 's3_staging'})
+        credentials: new aws.SharedIniFileCredentials({
+            profile: (isProduction) ? 's3_production' : "s3_staging"
+        })
     });
 
     gulp.src('./dist/**/*', {base: 'dist'})
-        .pipe(plugins.rename(function(path) {
-            path.dirname = 'landing/' + path.dirname;
-        }))
         .pipe(publisher.publish({
             'Cache-Control': 'public'
         }))

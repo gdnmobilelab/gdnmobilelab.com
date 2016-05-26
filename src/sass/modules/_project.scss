@@ -1,0 +1,98 @@
+.project {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 460px;
+    height: 460px;
+    border-radius: 50%;
+    background-color: #ffffff;
+}
+
+.project__logo {
+    position: absolute;
+    left: -2px;
+    top: 56px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.project__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 70%;
+}
+
+.project__body {
+    color: $neutral-1;
+    width: 300px;
+    margin: 66px auto 60px;
+}
+
+.project__subtitle a {
+    font-size: 14px;
+    color: $neutral-2;
+    text-decoration: none;
+}
+
+.project__title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: .8em;
+}
+
+.project__copy {
+    font-size: 14px;
+    line-height: 21px;
+
+    p {
+        margin-bottom: 1.4em;
+    }
+
+    a {
+        color: #ffffff;
+        padding: 4px 6px 3px;
+        margin: 0 1px;
+        background-color: $guardian-brand;
+        color: #fff;
+        border-radius: 1em;
+        text-decoration: none;
+
+        &:hover {
+            background-color: darken($guardian-brand, 10%);
+        }
+
+        &.twitter {
+            background-color: #00aced;
+        }
+
+        &.email {
+            background-color: $neutral-3;
+
+            &:hover {
+                background-color: darken($neutral-3, 10%);
+            }
+        }
+    }
+}
+
+.project__footer {
+    position: absolute;
+    width: 100%;
+    bottom: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: $neutral-2;
+
+    a {
+        color: $guardian-brand;
+        text-decoration: none;
+    }
+}

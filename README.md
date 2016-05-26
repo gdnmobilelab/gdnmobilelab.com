@@ -26,10 +26,26 @@ Once running, you are now free to make changes to files inside the `src` folder.
 Changes to any of these files (or adding any assets to the `assets` folder) will be watched and the site will rebuild with your changes. The resulting site will be placed inside the `dist` folder.
 
 ## Deployment
-Once you're ready to deploy, you'll need to setup your s3 credentials. Do this by duplicating `aws.example.json` and renaming the new file `aws.json`. Then you'll need to replace the asterisked fields with your s3 keys.
+Once you're ready to deploy, you'll need to setup your s3 credentials. You'll need to add different keys depending on what environment you'd like to deploy to. Add the following to your `~/.aws/credentials` file.
 
-Once you've done so simply deploy the website using the following command.
+```
+[s3_staging]
+aws_access_key_id = [YOUR_STAGING_ID]
+aws_secret_access_key = [YOUR_STAGING_ACCESS_KEY]
+
+[s3_production]
+aws_access_key_id = [YOUR_PRODUCTION_ID]
+aws_secret_access_key = [YOUR_PRODUCTION_ACCESS_KEY]
+```
+
+Now you'll be ready to deploy. You can deploy to the [`staging` environment](https://stg.gdnmobilelab.com/) with
 
 ```
 gulp deploy
+```
+
+Or the [`production` environment](https://www.gdnmobilelab.com/) with
+
+```
+gulp deploy --production
 ```

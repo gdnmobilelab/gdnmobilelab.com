@@ -3,6 +3,7 @@
     max-width: gs-span(6);
     height: gs-span(6);
     margin: $gs-baseline * 3 auto;
+    overflow: hidden;
 
     &:after {
         content: '';
@@ -134,10 +135,11 @@
     font-size: 14px;
     line-height: 18px;
     color: $neutral-2;
+    margin-bottom: $gs-baseline * 2;
 
     @include mq(mobileLandscape) {
         position: absolute;
-        bottom: 20px;
+        bottom: 0;
     }
 
     a {

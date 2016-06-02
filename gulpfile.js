@@ -38,7 +38,7 @@ gulp.task('serve', function() {
 });
 
 gulp.task('watch', function() {
-    gulp.watch(['src/**/*.html', 'src/**/*.json'], ['build-html']);
+    gulp.watch(['src/**/*.html', 'src/**/*.hbs', 'src/**/*.json'], ['build-html']);
     gulp.watch('src/assets/**/*', ['build-assets']);
     gulp.watch('src/sass/**/*.scss', ['build-css']);
 });

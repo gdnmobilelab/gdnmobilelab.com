@@ -1,23 +1,46 @@
 .project {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-    width: 460px;
-    height: 460px;
-    border-radius: 50%;
-    background-color: #ffffff;
+    position: relative;
+    max-width: gs-span(6);
+    height: gs-span(6);
+    margin: $gs-baseline * 3 auto;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -9999px;
+        right: -9999px;
+        bottom: 0;
+        margin: auto;
+        background-color: #ffffff;
+        width: gs-span(6);
+        border-radius: 50%;
+    }
+
+    @include mq(mobileLandscape) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+    }
 }
 
 .project__logo {
-    position: absolute;
-    left: -2px;
-    top: 56px;
-    width: 70px;
-    height: 70px;
+    position: relative;
+    width: 54px;
+    height: 54px;
     border-radius: 50%;
+    margin-bottom: .5em;
+
+    @include mq(mobileLandscape) {
+        position: absolute;
+        left: -80px;
+        top: 56px;
+        width: 70px;
+        height: 70px;
+    }
 }
 
 .project__icon {
@@ -31,9 +54,16 @@
 }
 
 .project__body {
+    position: relative;
+    z-index: 2;
     color: $neutral-1;
-    width: 300px;
-    margin: 66px auto 60px;
+    max-width: gs-span(4);
+    margin: auto;
+    padding: $gs-baseline;
+
+    @include mq(mobileLandscape) {
+        padding: ($gs-baseline * 5.4) 0;
+    }
 }
 
 .project__subtitle a {
@@ -99,16 +129,24 @@
 }
 
 .project__footer {
-    position: absolute;
     width: 100%;
-    bottom: 20px;
     text-align: center;
     font-size: 14px;
+    line-height: 18px;
     color: $neutral-2;
+
+    @include mq(mobileLandscape) {
+        position: absolute;
+        bottom: 20px;
+    }
 
     a {
         color: $guardian-brand;
         text-decoration: none;
+
+        @include mq($until: mobileLandscape) {
+            display: block;
+        }
 
         &:hover {
             text-decoration: underline;

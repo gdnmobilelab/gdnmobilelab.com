@@ -2,11 +2,12 @@
     "url" : "https://www.gdnmobilelab.com",
     "description" : "An innovation team in the Guardian US newsroom exploring storytelling and delivering news on small screens.\nFunded by the John S. and James L. Knight Foundation.",
     "projects" : [{
-        "index" : 1,
-        "title" : "Notifications",
-        "url" : "https://www.gdnmobilelab.com/apps/io/",
-        "icon" : "notification",
-        "color" : "#197dab"
+        "notifications": {
+            "title" : "Notifications",
+            "url" : "https://www.gdnmobilelab.com/apps/io/",
+            "icon" : "notification",
+            "color" : "#197dab"
+        }
     }],
     "social" : [{
         "url" : "https://twitter.com/GdnMobileLab",

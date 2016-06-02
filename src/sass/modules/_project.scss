@@ -1,0 +1,157 @@
+.project {
+    position: relative;
+    max-width: gs-span(6);
+    height: gs-span(6);
+    margin: $gs-baseline * 3 auto;
+    overflow: hidden;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -9999px;
+        right: -9999px;
+        bottom: 0;
+        margin: auto;
+        background-color: #ffffff;
+        width: gs-span(6);
+        border-radius: 50%;
+    }
+
+    @include mq(mobileLandscape) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+    }
+}
+
+.project__logo {
+    position: relative;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    margin-bottom: .5em;
+
+    @include mq(mobileLandscape) {
+        position: absolute;
+        left: -80px;
+        top: 56px;
+        width: 70px;
+        height: 70px;
+    }
+}
+
+.project__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 70%;
+}
+
+.project__body {
+    position: relative;
+    z-index: 2;
+    color: $neutral-1;
+    max-width: gs-span(4);
+    margin: auto;
+    padding: $gs-baseline;
+
+    @include mq(mobileLandscape) {
+        padding: ($gs-baseline * 5.4) 0;
+    }
+}
+
+.project__subtitle a {
+    font-size: 14px;
+    color: $neutral-2;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.project__title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: .8em;
+}
+
+.project__copy {
+    font-size: 14px;
+    line-height: 21px;
+
+    p {
+        margin-bottom: 1.4em;
+    }
+
+    a {
+        color: #ffffff;
+        padding: 4px 6px 3px;
+        margin: 0 1px;
+        background-color: $guardian-brand;
+        color: #fff;
+        border-radius: 1em;
+        text-decoration: none;
+
+        &:hover {
+            background-color: darken($guardian-brand, 10%);
+        }
+
+        &.link--twitter {
+            background-color: #00aced;
+
+            &:hover {
+                background-color: darken(#00aced, 10%);
+            }
+        }
+
+        &.link--email {
+            background-color: $neutral-3;
+
+            &:hover {
+                background-color: darken($neutral-3, 10%);
+            }
+        }
+
+        &.link--big {
+            display: inline-block;
+            margin-top: 2px;
+            padding: 9px 14px 7px;
+            border-radius: 2em
+        }
+    }
+}
+
+.project__footer {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    line-height: 18px;
+    color: $neutral-2;
+    margin-bottom: $gs-baseline * 2;
+
+    @include mq(mobileLandscape) {
+        position: absolute;
+        bottom: 0;
+    }
+
+    a {
+        color: $guardian-brand;
+        text-decoration: none;
+
+        @include mq($until: mobileLandscape) {
+            display: block;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

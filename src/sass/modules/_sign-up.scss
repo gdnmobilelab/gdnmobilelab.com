@@ -2,7 +2,7 @@
     font-size: 14px;
 
     @include mq($until: bitWhereFormLooksWeird) {
-        margin: 0 -20px ($gs-baseline * -2);
+        margin: 0 -20px (-$gs-baseline);
         padding: 0 20px $gs-baseline * 2;
         border-top: 1px solid $neutral-5;
         background-color: #ffffff;

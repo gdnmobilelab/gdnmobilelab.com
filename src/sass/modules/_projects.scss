@@ -1,6 +1,9 @@
 .projects {
     position: relative;
     margin: auto;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 .projects__logo {
@@ -17,10 +20,10 @@
 
 .projects__atom {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
     margin: auto;
 }
 
@@ -116,12 +119,12 @@ $stroke-dasharray: 6.2, 4, 3.4, 2.6, 1;
         }
     }
 
-    .projects--#{$i} {
+    .projects--#{$i - 1} {
         height: $radius + $gs-baseline * 4;
         width: $radius;
     }
 
-    .projects__atom--#{$i} {
+    .projects__atom--#{$i - 1} {
         width: $radius;
         height: $radius;
 
